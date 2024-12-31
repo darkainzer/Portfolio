@@ -1,0 +1,341 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header h2 {
+    font-size: 1.2rem;
+}
+
+p {
+color: aliceblue;
+
+}
+
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 450px;
+    margin: 20px auto;
+    z-index: 100;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.project-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #444;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 70px; 
+    margin: 40px auto;
+    max-width: 90%;
+}
+
+.content-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease, transform 1s ease;
+    gap: 20px; 
+    margin-bottom: 10em;
+}
+
+.content-row.reverse {
+    justify-content: flex-end;
+    transform: translateX(100px);
+    gap: 30px; 
+}
+
+.content-text {
+    max-width: 500px; 
+    word-wrap: break-word;
+    margin: 0; 
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.content-image {
+    flex-shrink: 0; 
+    max-width: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-row img {
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-row img:hover {
+    transform: scale(1.05);
+}
+
+.content-row.in-viewport {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.content-row.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+
+.content-row.grid .content-text h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem; 
+    text-align: left;
+}
+
+.content-row.grid .content-text p {
+    line-height: 1.6; 
+    margin: 0; 
+}
+
+.content-row.grid .content-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.content-row.grid .content-image img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto;
+    object-fit: cover; 
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; 
+}
+
+.content-row.grid .content-image img:hover {
+    transform: scale(1.05); 
+}
+
+@media (max-width: 768px) {
+
+    .content-image {
+        flex-shrink: 0; 
+        max-width: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    .content-row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .content-image img {
+        width: 95%; 
+        max-width: 100%;
+    }
+
+    .content-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .tiktok-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-details {
+        margin: 20px;
+    }
+
+    .content-row.grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+
+    .content-row.grid .content-image {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .content-image {
+        flex-shrink: 0; 
+        max-width: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header h2 {
+        font-size: 0.9rem;
+    }
+
+    .content-row {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .content-image img {
+        width: 100%; 
+        height: auto;
+    }
+
+    .content-text h2 {
+        font-size: 1rem;
+    }
+
+    .content-text p {
+        font-size: 0.9rem;
+    }
+
+    .project-details {
+        padding: 10px;
+    }
+
+    .tiktok-container {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .video-container {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .content-row.grid {
+        grid-template-columns: 1fr; 
+        justify-items: center; 
+        align-items: center; 
+    }
+
+    .content-row.grid .content-image img {
+        width: 90%;
+        max-width: 100%; 
+    }
+
+    .content-row.grid .content-text h2 {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 1280px) {
+
+    .content-image {
+        flex-shrink: 0; 
+        max-width: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    .content-row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; 
+    }
+
+    .content-image img {
+        width: 100%; 
+        max-width: 90%;
+    }
+
+    .content-text {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .tiktok-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-details {
+        margin: 25px;
+    }
+
+    .content-row.grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        justify-items: center; 
+        align-items: center; 
+    }
+
+    .content-row.grid .content-image img {
+        width: 95%; 
+        max-width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .content-row.grid .content-image img:hover {
+        transform: scale(1.05); 
+    }
+
+    
+}

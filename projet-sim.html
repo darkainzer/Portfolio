@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Vidéo - Jesse François</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-projet.css">
+    <script src="navbar.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="name">
+            <img src="img/JF2.png" alt="Jesse François">
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html#work-section">Projets</a></li>
+                <li><a href="index.html#about-content">A propos</a></li>
+                <li><a href="index.html#contact">Me contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="project-page">
+
+        <div class="project-details">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="img/sim.jpg" alt="Description image 1">
+                </div>
+                <div class="content-text">
+                    <h2>Montage réaliste</h2>
+                    <p>En complément de mes autres projets 3d, je m'exerce en créant des paysages plus réalistes et des simulations visant à reproduire la physique du monde réel. Cette scène est issue du CV vidéo, et me permet de dessiner un parallèle entre le monde 3d cartoon que j'ai créer, et cette simulation visant à être le plus réalistique possible. J'explique donc que je peux rendre les idées abstraites - le monde cartoon - en réaliste.</p>
+                </div>
+            </div>
+            <div class="content-row reverse">
+                <div class="content-text">
+                    <h2>Simulations physiques</h2>
+                    <p>Cela -èse produit notamment par l'utilisation de simulation de particules, d'assets photoréalistes, mais aussi par les simulations physiques comme les rigid body sur Blender. Sur cette image, on voit par exemple les pierres qui s'apprêtent à tomber le long de la montagne grâce à une simulation rigid body. Les lumières sont aussi un point central et sont gérées par le moteur de rendu Cycles.</p>
+                </div>
+                <div class="content-image">
+                    <img src="img/sim2.jpg" alt="Description image 2">
+                </div>
+            </div>
+            <div class="content-row grid">
+                <div class="content-row">
+                    <div class="content-image">
+                        <img src="img/comp.jpg" alt="Description image 3">
+                    </div>
+                    <div class="content-text">
+                        <div class="content-row">
+                            <div class="content-image">
+                                <img src="img/wtcomp.jpg" alt="Description image 3">
+                            </div>
+                            <div class="content-text">
+                            <h2>Compositing</h2>
+                            <p>Finalement, ce projet m'a aussi permis d'explorer les paramètres de compositing sur Blender. On voit ci-joint une image de la forêt sans traitement post-production, et il y a clairement quelque chose qui manque. Dans cette scène en particulier, le traitement post-prod me permet de joeur sur les lumières relatives au soleil mais aussi sur les lumières des particules. De plus, l'ajout d'un brouillard "mist" permet de créer une atmosphère particulière rendant la scène plus crédible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </main>
+    
+
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= window.innerHeight && rect.bottom >= 0;
+        }
+
+        function handleScroll() {
+            const contentRows = document.querySelectorAll('.content-row');
+            contentRows.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('in-viewport');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Vidéo - Jesse François</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-projet.css">
+    <script src="navbar.js"></script>
+</head>
+<body>
+    <header>
+        <div class="name">
+            <img src="img/JF2.png" alt="Jesse François">
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html#work-section">Projets</a></li>
+                <li><a href="index.html#about-content">A propos</a></li>
+                <li><a href="index.html#contact">Me contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="project-page">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/aty_nOL4hfM" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+
+        <div class="project-details">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="img/assiette1.jpg" alt="Description image 1">
+                </div>
+                <div class="content-text">
+                    <h2>Le projet</h2>
+                    <p>Dans le cadre de mes études en BUT MMI, nous avons été amenés à créer une association fictive et d'en faire la communication. En équipe de 5, nous avons imaginez Ma Belle Assiette, une association proposant des recettes économiques et des bons plans en Seine et Marne. J'étais chargé de faire un motion design présentant l'association et les ressources proposées.</p>
+                </div>
+            </div>
+            <div class="content-row reverse">
+                <div class="content-text">
+                    <h2>Comment présenter la vidéo ?</h2>
+                    <p>Il fallait donc représenter le ebook, notre ressources principal, mais aussi montrer la problématique du projet et ses caractéristiques. Ainsi, la vidéo est axé autour d'un personnage directement confronté à la problématique de bien se nourrir avec un budget serré, ce qu'on voit par l'intermédiaire du frigo vide, tandis que le ebook est réalisé sous forme de livre avec les outils 3D d'After Effects. J'ai également réalisé un motion design d'une recette avec le prix des ingrédients afin de présenter directement les solutions que proposait l'association.</p>
+                </div>
+                <div class="content-image">
+                    <img src="img/assiette3.jpg" alt="Description image 2">
+                </div>
+            </div>
+            <div class="content-row grid">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="img/assiette2.jpg" alt="Description image 3">
+                </div>
+                <div class="content-text">
+                    <div class="content-row">
+                        <div class="content-image">
+                            <img src="img/assiette5.jpg" alt="Description image 3">
+                        </div>
+                        <div class="content-text">
+                    <h2>Rétrospective</h2>
+                    <p>Ce projet m'a permis de développer mes compétences sur After Effects via la contrainte de devoir non seulement représenter la problématique de l'association mais aussi les solutions proposées. Pour se faire, j'ai notamment utilisé After Effects pour les motion designs mais aussi plusieurs outils 3D pour animer certains éléments comme le ebook ou le frigo. Le personnage est lui fait en 2D. C'est pour moi un problème car la 2D offre beaucoup moins de liberté quant aux mouvements du personnage. Après ce projet, je me suis donc penché sur la 3D de Blender afin de pouvoir modéliser, rigger et animer un personnage de façon optimale.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    
+
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= window.innerHeight && rect.bottom >= 0;
+        }
+
+        function handleScroll() {
+            const contentRows = document.querySelectorAll('.content-row');
+            contentRows.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('in-viewport');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
+</body>
+</html>

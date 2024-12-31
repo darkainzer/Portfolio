@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Vidéo - Jesse François</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-projet.css">
+    <script src="navbar.js"></script>
+</head>
+<body>
+    <header>
+        <div class="name">
+            <img src="img/JF2.png" alt="Jesse François">
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html#work-section">Projets</a></li>
+                <li><a href="index.html#about-content">A propos</a></li>
+                <li><a href="index.html#contact">Me contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="project-page">
+        <div class="video-container">
+            <iframe 
+            src="https://www.youtube.com/embed/0Z2fARpp608" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        </div>
+
+        <div class="project-details">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="img/monster1.jpg" alt="Description image 1">
+                </div>
+                <div class="content-text">
+                    <h2>Pourquoi une fausse publicité ?</h2>
+                    <p>Afin de me former au format publicitaire, j'ai réalisé une fausse publicité en 3d pour Monster Drink. C'est un nouveau gout fraise totalement inventé, le but étant principalement de travailler sur la façon de mettre en valeur le produit et le fait que le nouveau n'est pas sensé être encore sorti.</p>
+                </div>
+            </div>
+            <div class="content-row reverse">
+                <div class="content-text">
+                    <h2>Assets 3D</h2>
+                    <p>Tout les assets(sauf la cannette) et inspirations proviennent de TopChannel1on1 qui fait très souvent ce genre de composition et qui le partage au public sur youtube. C'est donc une scène 3d composé de fruits rouge en 3d, et de la cannette monster dont j'ai téléchargé une étiquette officielle et adapté au nouveau gout afin de l'enrouler autour du model 3d de la canette avec le UV editor.</p>
+                </div>
+                <div class="content-image">
+                    <img src="img/monster2.jpg" alt="Description image 2">
+                </div>
+            </div>
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="img/monster3.jpg" alt="Description image 3">
+                </div>
+                <div class="content-text">
+                    <h2>Simulation</h2>
+                    <p>Ce qui rend l'animation vraiment interessante, c'est la simulation de liquide sortant de la canette et les goutes qui glissent le long de la canette. L'interet de ce proejt était aussi de m'entrainer à manipuler ce genre de simuilatrion qui est pour moi une des plus difficile car elle vise à être réaliste, et offre moins de liberté qu'une simulation de portail ou particules par exemple qui sont totalement inventés.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= window.innerHeight && rect.bottom >= 0;
+        }
+
+        function handleScroll() {
+            const contentRows = document.querySelectorAll('.content-row');
+            contentRows.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('in-viewport');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
+</body>
+</html>
